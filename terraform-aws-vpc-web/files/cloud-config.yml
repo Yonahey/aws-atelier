@@ -1,0 +1,11 @@
+#cloud-config
+package_update: true
+packages:
+- wget
+- unzip
+- nginx
+
+runcmd:
+- cd /var/run
+- wget -O template.zip  https://html5up.net/forty/download
+- unzip /var/run/template.zip -d /var/www/html/
