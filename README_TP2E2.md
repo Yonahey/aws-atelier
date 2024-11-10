@@ -1,4 +1,4 @@
-# TP1E1-terraform-aws-vpc
+# TP2E2-terraform-aws-vpc-web
 
 ## Instructions
 
