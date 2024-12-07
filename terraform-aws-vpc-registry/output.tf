@@ -1,12 +1,8 @@
-output "instance_id" {
-  value = module.ec2.instance_id
+output "all_instance_ids" {
+  value = module.ec2.instance_ids
 }
 
-output "instance_private_ip" {
-  value = module.ec2.instance_private_ip
-}
-
-output "instance_private_dns" {
-  value = module.ec2.instance_private_dns
+output "all_private_ips" {
+  value = module.ec2.instance_private_ips
 }
 
