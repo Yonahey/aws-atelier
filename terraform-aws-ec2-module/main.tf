@@ -1,7 +1,11 @@
 resource "aws_instance" "EC2" {
+  count = var.instance_count
   instance_type = "t3.micro"
   ami           = data.aws_ami.ubuntu.id
   subnet_id     = var.subnet_id
+  tags = {
+    name = "${var.instance_name_tag}-${count.index}"
+  }
 }
 
 

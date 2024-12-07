@@ -1,17 +1,10 @@
-output "instance_id" {
+output "instance_ids" {
   description = "ID de l'instance"
-  value       = aws_instance.EC2.id
+  value       = aws_instance.EC2[*].id
 }
 
-output "instance_private_ip" {
+output "instance_private_ips" {
   description = "IP privée de l'instance"
 
-  value = aws_instance.EC2.private_ip
+  value = aws_instance.EC2[*].private_ip
 }
-
-output "instance_private_dns" {
-  description = "DNS privé de l'instance"
-
-  value = aws_instance.EC2.private_dns
-}
-
