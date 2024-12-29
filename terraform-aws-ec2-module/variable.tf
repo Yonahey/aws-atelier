@@ -1,12 +1,6 @@
-variable "subnet_id" {
+variable "subnets" {
   description = "ID du sous-reseau"
-  type        = string
-}
-
-variable "instance_count" {
-  description = "nombre d'instance EC2 à déployer"
-  type = number
-  default = 1
+  type        = map(string)
 }
 
 variable "instance_name_tag" {

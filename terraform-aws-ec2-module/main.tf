@@ -1,10 +1,10 @@
 resource "aws_instance" "EC2" {
-  count = var.instance_count
+  for_each = var.subnets
   instance_type = "t3.micro"
   ami           = data.aws_ami.ubuntu.id
-  subnet_id     = var.subnet_id
+  subnet_id     = each.value
   tags = {
-    name = "${var.instance_name_tag}-${count.index}"
+    name = "${var.instance_name_tag}-${each.key}"
   }
 }
 
